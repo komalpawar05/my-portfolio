@@ -1,5 +1,3 @@
-import React from "react";
-
 const About = () => {
   return (
     <section className="relative py-6 px-6 overflow-hidden  text-gray-900  dark:text-white transition-colors duration-300">
