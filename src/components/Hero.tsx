@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import Profile_Image from "../assets/2.png";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
     <section
-        id="home"
-        className="relative min-h-screen flex items-center overflow-hidden px-6"
-    >
-      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
+  id="home"
+  className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-6 py-16 sm:py-0"
+>
+  <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       {/* Diagonal Animated Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-full h-full 
@@ -110,6 +111,78 @@ const Hero = () => {
 
         </motion.div>
         </motion.div>
+        {/* Right Vertical Social Bar */}
+<div className="
+  hidden md:flex
+  fixed right-6 top-1/2 -translate-y-1/2
+  flex-col items-center gap-6
+  z-50
+">
+
+  {/* Location */}
+  <div className="
+    rotate-90
+    text-sm
+    text-gray-600 dark:text-gray-400
+    tracking-wide
+  ">
+    Pune, India
+  </div>
+
+  {/* Line */}
+  <div className="w-px h-10 bg-gray-300 dark:bg-gray-600"></div>
+
+  {/* GitHub */}
+  <a
+    href="https://github.com/komalpawar05"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      group
+      w-10 h-10
+      flex items-center justify-center
+      rounded-xl
+      bg-white dark:bg-white/5
+      border border-gray-200 dark:border-white/10
+      shadow-md
+      hover:shadow-lg
+      transition-all duration-300
+    "
+  >
+    <FaGithub className="
+      text-lg
+      text-gray-900 dark:text-white
+      group-hover:scale-110
+      transition duration-300
+    " />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/komalpawar05/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      group
+      w-10 h-10
+      flex items-center justify-center
+      rounded-xl
+      bg-white dark:bg-white/5
+      border border-gray-200 dark:border-white/10
+      shadow-md
+      hover:shadow-lg
+      transition-all duration-300
+    "
+  >
+    <FaLinkedin className="
+      text-lg
+      text-[#0A66C2]
+      group-hover:scale-110
+      transition duration-300
+    " />
+  </a>
+
+</div>
       </div>
     </section>
   );

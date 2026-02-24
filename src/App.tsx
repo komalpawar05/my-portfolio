@@ -5,6 +5,7 @@ import About from "./components/About";
 import Project from "./components/Project";
 import Skills from "./components/Skills";
 import ScrollToTop from "./components/ScrollToTop";
+import Experience from "./components/Experience";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // default dark mode
@@ -20,7 +21,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-blue-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <div className="py-2">
@@ -28,6 +29,7 @@ function App() {
       </div>
 
       <About />
+      <Experience />
       <Project />
       <Skills />
       <ScrollToTop />

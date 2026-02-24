@@ -1,106 +1,152 @@
+import { motion } from "framer-motion";
+import {
+  SiReact,
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiVite,
+  SiNetlify,
+  SiGoogleads,
+  SiMeta,
+} from "react-icons/si";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "EV Dock Web Platform",
-    description: "Modern EV charging management platform with API integration and responsive dashboard UI.",
-    image: "/projects/evdock.jpg",
-    tech: ["React.js", "Tailwind", "API"],
+    title: "Website Design and Development for EV Charging Platform",
+    description:
+      "Developed and deployed EV charging platform website with API integration and optimized frontend performance.",
+    tech: [
+      { icon: SiReact },
+      { icon: SiJavascript },
+      { icon: SiTailwindcss },
+      { icon: SiVite },
+      { icon: SiNetlify },
+    ],
     live: "#",
     github: "#",
   },
   {
-    title: "Portfolio Website",
-    description: "Personal developer portfolio with modern animations and performance optimization.",
-    image: "/projects/portfolio.jpg",
-    tech: ["React", "Framer Motion", "Vite"],
+    title: "Admin Dashboard System",
+    description:
+      "Built structured analytics dashboard with clean UI and performance monitoring features.",
+    tech: [
+      { icon: SiReact },
+      { icon: SiTypescript },
+      { icon: SiTailwindcss },
+    ],
     live: "#",
     github: "#",
   },
   {
-    title: "Landing Page System",
-    description: "High-converting landing page built with clean UI and responsive structure.",
-    image: "/projects/landing.jpg",
-    tech: ["React", "Tailwind", "SEO"],
+    title: "Digital Marketing Campaign",
+    description:
+      "Managed performance campaigns using conversion-focused landing pages and paid ads.",
+    tech: [
+      { icon: SiGoogleads },
+      { icon: SiMeta },
+    ],
     live: "#",
     github: "#",
   },
 ];
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <section  id="projects" className=" py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 px-6">
+  <div className="max-w-5xl mx-auto">
 
-        {/* Section Title */}
-        <h1 className="text-4xl md:text-5xl font-semibold mb-6 mb-16 text-center  bg-gradient-to-r from-indigo-700 to-cyan-800
-              text-transparent bg-clip-text uppercase font-header">
-          Featured Projects
-        </h1>
+    <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-4xl md:text-5xl py-12
+              text-3xl font-semibold
+              mb-6 text-center
+              bg-gradient-to-r from-indigo-700 to-cyan-800
+              text-transparent bg-clip-text font-header"
+    >
+      Featured Projects
+    </motion.h2>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid sm:grid-cols-2 gap-8">
 
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-105"
-            >
-              
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
-                />
+  {projects.map((project, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -6 }}
+      className="
+        relative
+        p-[1px]
+        rounded-2xl
+        bg-gradient-to-r from-indigo-500/40 to-cyan-500/40
+      "
+    >
+      {/* Inner Card */}
+      <div className="
+        p-6
+        rounded-2xl
+        bg-white dark:bg-neutral-900
+        backdrop-blur-xl
+        h-full
+      ">
+
+        <h3 className="text-xl font-semibold mb-3">
+          {project.title}
+        </h3>
+
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-3 mb-5">
+          {project.tech.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={i}
+                className="
+                  p-2
+                  rounded-lg
+                  bg-gray-100 dark:bg-white/10
+                  text-gray-700 dark:text-gray-300
+                  text-lg
+                  hover:scale-110
+                  transition duration-300
+                "
+              >
+                <Icon />
               </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-400 text-sm mb-4">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs bg-indigo-500/20 text-indigo-400 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Buttons */}
-                <div className="flex gap-4">
-                  <a
-                    href={project.live}
-                    className="text-sm px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500 transition"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    className="text-sm px-4 py-2 border border-white/20 rounded-lg hover:bg-white/10 transition"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          ))}
-
+            );
+          })}
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default Projects;
+        {/* Links */}
+        <div className="flex gap-6 text-sm font-medium">
+          <a
+            href={project.live}
+            className="text-indigo-600 hover:opacity-80"
+          >
+            Live
+          </a>
+          <a
+            href={project.github}
+            className="text-gray-700 dark:text-gray-300 hover:opacity-80"
+          >
+            Code
+          </a>
+        </div>
+
+      </div>
+    </motion.div>
+  ))}
+
+</div>
+  </div>
+</section>
+  );
+}
