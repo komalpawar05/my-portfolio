@@ -33,47 +33,48 @@ export default function Experience() {
 
         <div className="space-y-14">
 
-          {/* EV Dock Experience */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="
-              relative
-              border-l-2
-              border-indigo-500 dark:border-indigo-400
-              pl-6 sm:pl-8
-            "
-          >
-            {/* Timeline Dot */}
-            <span className="absolute -left-[6px] top-2 w-3 h-3 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
+        {/* EV Dock Experience */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="
+          relative
+          border-l-2
+          border-indigo-500 dark:border-indigo-400
+          pl-6 sm:pl-8
+          "
+      >
+        {/* Timeline Dot */}
+       <span className="absolute -left-[6px] top-2 w-3 h-3 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
 
-            <h3 className="text-xl sm:text-2xl font-semibold">
-              EV Dock Pvt Ltd
-            </h3>
+        <h3 className="text-xl sm:text-2xl font-semibold">
+          EV Dock Pvt Ltd
+        </h3>
 
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-              Frontend Developer & Digital Marketing Specialist · June 2022 – Present
-            </p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          Frontend Developer & Digital Marketing Specialist · June 2022 – Present
+        </p>
 
-            <ul className="space-y-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-              <li>• Developed and maintained EV Dock website using React.js & Tailwind CSS.</li>
-              <li>• Integrated backend APIs and optimized frontend performance.</li>
-              <li>• Deployed and hosted production website on Hostinger.</li>
-              <li>• Configured domain, DNS records, and SSL certificate.</li>
-              <li>• Integrated Google Analytics & Search Console for SEO tracking.</li>
-              <li>• Managed paid campaigns via Google Ads & Meta Ads.</li>
-            </ul>
+          <ul className="space-y-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+            <li>• Developed & maintained EV Dock website using React.js & Tailwind CSS.</li>
+            <li>• Led CMS management, UI enhancements & frontend performance optimization.</li>
+            <li>• Monitored charger live logs & server connection logs for system stability.</li>
+            <li>• Integrated APIs and supported backend operations.</li>
+            <li>• Performance Marketing Experience.</li>
+            <li>• Handled Google Business Profile setup & local SEO.</li>
+            <li>• Designed marketing creatives for digital campaigns.</li>
+          </ul>
 
-            <div className="flex flex-wrap gap-4 mt-6 text-xl text-gray-700 dark:text-gray-300">
-              <SiReact />
-              <SiTailwindcss />
-              <SiHostinger />
-              <SiGoogleanalytics />
-              <SiGoogleads />
-            </div>
-          </motion.div>
+        <div className="flex flex-wrap gap-4 mt-6 text-xl text-gray-700 dark:text-gray-300">
+          <SiReact />
+          <SiTailwindcss />
+          <SiHostinger />
+          <SiGoogleanalytics />
+          <SiGoogleads />
+        </div>
+      </motion.div>
 
           {/* Eatab Project */}
           <motion.div

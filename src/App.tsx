@@ -6,6 +6,9 @@ import Project from "./components/Project";
 import Skills from "./components/Skills";
 import ScrollToTop from "./components/ScrollToTop";
 import Experience from "./components/Experience";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // default dark mode
@@ -33,6 +36,8 @@ function App() {
       <Project />
       <Skills />
       <ScrollToTop />
+      <Contact />
+      <Footer/>
     </div>
   );
 }

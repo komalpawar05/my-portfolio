@@ -1,6 +1,8 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "../assets/logo_1.png";
+import Experience from "./Experience";
 
 interface NavBarProps {
   darkMode: boolean;
@@ -24,7 +26,7 @@ const NavBar: React.FC<NavBarProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navItems = ["Home", "About", "Projects", "Skills"];
+  const navItems = ["Home", "About", "Experience", "Projects", "Skills"];
 
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-700">
@@ -32,10 +34,11 @@ const NavBar: React.FC<NavBarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
 
         {/* Logo */}
-        <h1 className="text-xl sm:text-2xl font-bold tracking-wide text-gray-900 dark:text-white">
-          Komal<span className="text-indigo-600">.</span>
-        </h1>
-
+        <img 
+          src={Logo} 
+          alt="Komal Logo" 
+          className="h-8 md:h-8 w-auto"
+        />
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-medium text-gray-700 dark:text-gray-300">
           {navItems.map((item) => (
