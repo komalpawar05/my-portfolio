@@ -25,7 +25,7 @@ const NavBar: React.FC<NavBarProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navItems = ["Home", "About", "Experience", "Projects", "Skills"];
+  const navItems = ["Home", "About", "Experience", "Projects", "Skills", "Contact"];
 
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-700">

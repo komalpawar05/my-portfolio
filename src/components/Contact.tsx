@@ -3,7 +3,7 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Contact() {
   return (
-    <section className="py-28 px-6 bg-white dark:bg-neutral-950 transition-colors duration-500">
+    <section id="contact" className="py-28 px-6 bg-white dark:bg-neutral-950 transition-colors duration-500">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE */}

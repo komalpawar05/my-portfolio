@@ -21,8 +21,8 @@ const projects = [
       { icon: SiVite },
       { icon: SiNetlify },
     ],
-    live: "#",
-    github: "#",
+    // live: "#",
+    // github: "#",
   },
   {
     title: "Admin Dashboard System",
@@ -33,8 +33,8 @@ const projects = [
       { icon: SiTypescript },
       { icon: SiTailwindcss },
     ],
-    live: "#",
-    github: "#",
+    // live: "#",
+    // github: "#",
   },
   {
     title: "Digital Marketing Campaign",
@@ -44,14 +44,14 @@ const projects = [
       { icon: SiGoogleads },
       { icon: SiMeta },
     ],
-    live: "#",
-    github: "#",
+    // live: "#",
+    // github: "#",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-6">
+    <section id="projects" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
  
         <motion.h2
@@ -105,7 +105,7 @@ export default function Projects() {
                   })}
                 </div>
 
-                <div className="flex gap-6 text-sm font-medium">
+                {/* <div className="flex gap-6 text-sm font-medium">
                   <a
                     href={project.live}
                     target="_blank"
@@ -122,7 +122,7 @@ export default function Projects() {
                   >
                     Code
                   </a>
-                </div>
+                </div> */}
 
               </div>
             </motion.div>
