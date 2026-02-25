@@ -50,7 +50,7 @@ export default function Experience() {
        <span className="absolute -left-[6px] top-2 w-3 h-3 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
 
         <h3 className="text-xl sm:text-2xl font-semibold">
-          EV Dock Pvt Ltd
+          Tritan EV Dock Pvt Ltd
         </h3>
 
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
