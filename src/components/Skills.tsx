@@ -13,6 +13,7 @@ import {
   SiLinkedin,
   SiGoogleanalytics,
   SiCanva,
+  SiVercel,
 } from "react-icons/si";
 
 import { FaSearch } from "react-icons/fa";
@@ -28,6 +29,7 @@ const sections = [
       { icon: SiVite, name: "Vite", color: "#646CFF" },
       { icon: SiGit, name: "Git", color: "#F05032" },
       { icon: SiGithub, name: "GitHub", color: "#181717" },
+      { icon: SiVercel, name: "Vercel", color: "#000000" },
     ],
   },
   {
@@ -48,7 +50,7 @@ const sections = [
     { icon: SiLinkedin, name: "LinkedIn Ads", color: "#0A66C2" },
     { icon: FaSearch, name: "SEO", color: "#16A34A" },
     { icon: SiGoogleanalytics, name: "Google Analytics", color: "#F9AB00" },
-    { icon: SiGoogleads, name: "Google Business Profile", color: "#34A853" },
+    
   ],
 }
 ];

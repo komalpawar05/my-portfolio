@@ -51,7 +51,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative overflow-hidden
+    <section id="projects" className="relative overflow-hidden overflow-x-hidden
       py-14 sm:py-20 lg:py-24
       px-4 sm:px-6 lg:px-8
       bg-gradient-to-b 
