@@ -45,29 +45,36 @@ const About = () => {
             WHO AM I?
           </h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-gray-600 dark:text-gray-400
-            leading-relaxed
-            text-sm sm:text-base md:text-lg"
+            className="space-y-4 text-gray-600 dark:text-gray-400
+            leading-relaxed text-sm sm:text-base md:text-lg"
           >
-            I am a passionate{" "}
-            <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-              Frontend Developer
-            </span>{" "}
-            with over{" "}
-            <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-              4 years of experience
-            </span>{" "}
-           designing and building responsive web applications using React.js and modern JavaScript.
-            <br />
-           I enjoy creating clean, scalable component architectures and delivering smooth, high-quality user experiences.
-            <br />My work includes developing operational dashboards, optimizing performance, and continuously improving 
-            UI efficiency through modern development practices.
-          </motion.p>
+            <p>
+              I am a passionate{" "}
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                Frontend Developer
+              </span>{" "}
+              with over{" "}
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                4 years of experience
+              </span>{" "}
+              designing and building responsive web applications using React.js and modern JavaScript.
+            </p>
+
+            <p>
+              I enjoy creating clean, scalable component architectures and delivering smooth,
+              high-quality user experiences.
+            </p>
+
+            <p>
+              My work includes developing operational dashboards, optimizing performance,
+              and continuously improving UI efficiency through modern development practices.
+            </p>
+          </motion.div>
         </motion.div>
 
 
@@ -116,9 +123,9 @@ const About = () => {
       </div>
 
       {/* Responsive Wave */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none ">
         <svg
-          className="relative block w-full
+          className="relative block w-full 
           h-[70px] sm:h-[90px] md:h-[110px] lg:h-[120px]"
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
