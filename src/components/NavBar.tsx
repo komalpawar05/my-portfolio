@@ -76,52 +76,40 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, setDarkMode }) => {
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </div>
 
-          {/* Mobile Dropdown */}
-          <div
-            ref={menuRef}
-            className={`md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)]
-            bg-white dark:bg-gray-900
-            border-t border-gray-200 dark:border-gray-700
-            shadow-xl
-            transform transition-transform duration-300 ease-in-out
-            ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
-          >
-            <div className="flex flex-col px-6 py-8 space-y-6
-              text-gray-700 dark:text-gray-300
-              text-lg font-medium">
-
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="hover:text-indigo-600 transition duration-300"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+          {/* Mobile Button */}
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-md 
+              text-gray-900 dark:text-white 
+              hover:bg-gray-200 dark:hover:bg-gray-800 
+              transition duration-300"
+            >
+              {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Drawer */}
         <div
           ref={menuRef}
-          className={`md:hidden absolute top-16 left-0 w-full 
-          bg-white dark:bg-gray-900 
-          border-t border-gray-200 dark:border-gray-700 
-          shadow-lg transition-all duration-300 ease-in-out
-          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
+          className={`md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)]
+          bg-white dark:bg-gray-900
+          border-t border-gray-200 dark:border-gray-700
+          shadow-xl
+          transform transition-transform duration-300 ease-in-out
+          ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
-          <div className="px-6 py-6 space-y-5 
-            text-gray-700 dark:text-gray-300 
-            text-base font-medium">
+          <div className="flex flex-col px-6 py-8 space-y-6
+            text-gray-700 dark:text-gray-300
+            text-lg font-medium">
 
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block hover:text-indigo-600 transition duration-300"
+                className="hover:text-indigo-600 transition duration-300"
                 onClick={() => setMenuOpen(false)}
               >
                 {item}
@@ -129,9 +117,10 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, setDarkMode }) => {
             ))}
           </div>
         </div>
+
       </nav>
 
-      {/* Spacer to prevent content hiding behind fixed navbar */}
+      {/* Spacer */}
       <div className="h-16"></div>
     </>
   );
