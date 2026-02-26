@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "../assets/logo_1.png";
 
@@ -8,13 +8,13 @@ interface NavBarProps {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavBar: React.FC<NavBarProps> = ({
-  darkMode,
-  setDarkMode,
-}) => {
+const NavBar: React.FC<NavBarProps> = ({ darkMode, setDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  // ✅ Close mobile menu when screen resized to desktop
+  const navItems = ["Home", "About", "Experience", "Projects", "Skills", "Contact"];
+
+  // Close menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -25,67 +25,102 @@ const NavBar: React.FC<NavBarProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navItems = ["Home", "About", "Experience", "Projects", "Skills", "Contact"];
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-700">
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <>
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg 
+        bg-white/70 dark:bg-gray-900/70 
+        border-b border-gray-200 dark:border-gray-700">
 
-        {/* Logo */}
-        <img 
-          src={Logo} 
-          alt="Komal Logo" 
-          className="h-8 md:h-8 w-auto"
-        />
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-medium text-gray-700 dark:text-gray-300">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative group transition"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
+          h-16 flex justify-between items-center">
+
+          {/* Logo */}
+          <img 
+            src={Logo} 
+            alt="Komal Logo" 
+            className="h-7 sm:h-8 md:h-9 w-auto"
+          />
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-10 
+            text-sm font-medium text-gray-700 dark:text-gray-300">
+
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="relative group transition duration-300"
+              >
+                {item}
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 
+                  bg-indigo-600 transition-all duration-300 
+                  group-hover:w-full"></span>
+              </a>
+            ))}
+
+            <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-md 
+              text-gray-900 dark:text-white 
+              hover:bg-gray-200 dark:hover:bg-gray-800 
+              transition duration-300"
             >
-              {item}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-
-          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+              {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 transition"
-          >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
-        </div>
-      </div>
+        {/* Mobile Dropdown */}
+        <div
+          ref={menuRef}
+          className={`md:hidden absolute top-16 left-0 w-full 
+          bg-white dark:bg-gray-900 
+          border-t border-gray-200 dark:border-gray-700 
+          shadow-lg transition-all duration-300 ease-in-out
+          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
+        >
+          <div className="px-6 py-6 space-y-5 
+            text-gray-700 dark:text-gray-300 
+            text-base font-medium">
 
-      {/* Mobile Dropdown with Animation */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-6 pb-6 pt-4 space-y-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-base font-medium">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="block hover:text-indigo-600 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="block hover:text-indigo-600 transition duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Spacer to prevent content hiding behind fixed navbar */}
+      <div className="h-16"></div>
+    </>
   );
 };
 
