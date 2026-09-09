@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Profile_Image from "../assets/2.png";
+import Profile_Image from "../assets/profile_photo.png";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import Resume from "../assets/Komal Resume Fronend Developerr 022026.pdf";
 
