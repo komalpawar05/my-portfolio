@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "./ThemeToggle";
-import Logo from "../assets/logo_1.png";
+import Logo from "../assets/logo.png";
 
 interface NavBarProps {
   darkMode: boolean;
@@ -53,7 +53,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, setDarkMode }) => {
           <img 
             src={Logo} 
             alt="Komal Logo" 
-            className="h-7 sm:h-8 md:h-9 w-auto"
+            className="h-10 sm:h-8 md:h-18 w-auto"
           />
 
           {/* Desktop Menu */}
