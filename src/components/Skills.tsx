@@ -17,6 +17,7 @@ import {
 } from "react-icons/si";
 
 import { FaSearch } from "react-icons/fa";
+import SectionHeading from "./common/SectionHeading";
 const sections = [
   {
     title: "Frontend Development",
@@ -63,20 +64,15 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
 
         {/* Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="
-            text-4xl md:text-5xl py-12
-              text-3xl font-semibold
-              mb-6 text-center
-              bg-gradient-to-r from-indigo-700 to-cyan-800
-              text-transparent bg-clip-text font-header
-          "
-        >
-          Skills & Expertise
-        </motion.h2>
+        {/* Section Heading */}
+        <div className="mb-14 md:mb-20">
+          <SectionHeading
+            title="WHAT"
+            highlight="I DO?"
+            centered
+            description="I specialize in frontend development, UI/UX design, and digital marketing, delivering comprehensive solutions for modern web applications."
+          />
+        </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-10">
