@@ -1,12 +1,16 @@
+import * as React from "react";
 import { motion } from "framer-motion";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
+
 import {
   FiArrowUpRight,
   FiGithub,
   FiLinkedin,
   FiMail,
 } from "react-icons/fi";
+
 import SectionHeading from "./common/SectionHeading";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +29,7 @@ export default function Contact() {
     }));
   };
 
- const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const subject = encodeURIComponent(
@@ -36,7 +40,8 @@ export default function Contact() {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
 
-    window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+    window.location.href =
+      `mailto:komalpawar05051997@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -70,7 +75,6 @@ export default function Contact() {
       />
 
       <div className="max-w-5xl mx-auto relative z-10">
-
         {/* Heading */}
         <SectionHeading
           centered
@@ -81,7 +85,6 @@ export default function Contact() {
 
         {/* Contact Content */}
         <div className="mt-12 grid lg:grid-cols-[0.85fr_1.15fr] gap-6">
-
           {/* LEFT CONTACT INFO */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -128,7 +131,6 @@ export default function Contact() {
             />
 
             <div className="relative z-10">
-
               <span
                 className="
                   inline-flex
@@ -166,7 +168,7 @@ export default function Contact() {
 
               {/* Email */}
               <a
-                href="mailto:your-email@example.com"
+                href="mailto:komalpawar05051997@gmail.com"
                 className="
                   mt-8
                   flex
@@ -201,7 +203,6 @@ export default function Contact() {
 
               {/* Social Links */}
               <div className="flex gap-3 mt-4">
-
                 <a
                   href="https://github.com/"
                   target="_blank"
@@ -237,7 +238,6 @@ export default function Contact() {
                 >
                   <FiLinkedin />
                 </a>
-
               </div>
             </div>
           </motion.div>
@@ -274,7 +274,6 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="space-y-5"
             >
-
               {/* Name */}
               <div>
                 <label
@@ -428,7 +427,6 @@ export default function Contact() {
                   "
                 />
               </motion.button>
-
             </form>
           </motion.div>
         </div>
