@@ -1,5 +1,5 @@
-import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
+import { useState, type FormEvent } from "react";
 import {
   FiArrowUpRight,
   FiGithub,
@@ -7,7 +7,6 @@ import {
   FiMail,
 } from "react-icons/fi";
 import SectionHeading from "./common/SectionHeading";
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +25,7 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+ const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const subject = encodeURIComponent(
