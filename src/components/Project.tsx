@@ -13,6 +13,7 @@ import {
 import { ArrowUpRight } from "lucide-react";
 import YouTubeImg from "../assets/project/youtube.png";
 import Project6 from "../assets/project/upcoming_project.webp";
+import SectionHeading from "./common/SectionHeading";
 
 type ProjectPreview = "iframe" | "image";
 
@@ -325,17 +326,12 @@ export default function Projects() {
 
             "
           >
-            <h1
-              className="
-              text-3xl sm:text-4xl md:text-5xl
-              font-semibold
-              mb-12 text-center
-              bg-gradient-to-r from-indigo-700 to-cyan-800
-              text-transparent bg-clip-text
-            "
-            >
-              Featured Projects
-            </h1>
+            <SectionHeading
+              title="FEATURED"
+              highlight="PROJECTS"
+              centered
+              description="A showcase of my recent work, highlighting modern UI, responsive design, and optimized frontend performance."
+            />
 
           </div>
         </motion.div>

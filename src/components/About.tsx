@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionHeading from "./common/SectionHeading";
 
 const About = () => {
   return (
@@ -36,14 +37,11 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl
-            font-semibold mb-6
-            bg-gradient-to-r from-indigo-700 to-cyan-800
-            text-transparent bg-clip-text"
-          >
-            WHO AM I?
-          </h1>
+          <SectionHeading
+            title="WHO"
+            highlight="AM I?"
+            description="A passionate frontend developer creating modern and responsive web experiences."
+          />
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,6 +51,7 @@ const About = () => {
             className="space-y-4 text-gray-600 dark:text-gray-400
             leading-relaxed text-sm sm:text-base md:text-lg"
           >
+            <br />
             <p>
               I am a passionate{" "}
               <span className="font-semibold text-indigo-600 dark:text-indigo-400">
@@ -109,7 +108,7 @@ const About = () => {
 {`const developer = {
   name: "Komal Pawar",
   role: "Frontend Developer",
-  experience: "3+ Years",
+  experience: "4+ Years",
   techStack: ["React.js", "JavaScript", "Tailwind CSS"],
   strengths: [
     "Responsive UI",

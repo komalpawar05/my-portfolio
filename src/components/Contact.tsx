@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import SectionHeading from "./common/SectionHeading";
 
 export default function Contact() {
   return (
@@ -7,41 +8,12 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 py-2
-          bg-gradient-to-r from-indigo-600 to-cyan-500
-          text-transparent bg-clip-text">
-            Let’s Work Together
-          </h2>
-
-          <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-            I’m currently open to Frontend Developer & Web Developer roles.
-            If you have an exciting opportunity or project, feel free to reach out.
-          </p>
-
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
-
-            <div className="flex items-center gap-3">
-              <FiMail />
-              <span><a href="mailto:komalpawar05051997@gmail.com">komalpawar05051997@gmail.com</a></span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiLinkedin />
-              <span><a href="https://www.linkedin.com/in/komalpawar05/e" target="_blank" rel="noopener noreferrer">LinkedIn </a></span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiGithub />
-              <span><a href="https://github.com/komalpawar05" target="_blank" rel="noopener noreferrer">GitHub </a></span>
-            </div>
-
-          </div>
-        </motion.div>
+        <SectionHeading
+          title="GET IN"
+          highlight="TOUCH"
+          description="I’m currently open to Frontend Developer & Web Developer roles. If you have an exciting opportunity or project, feel free to reach out."
+          centered={false}
+        />
 
         {/* RIGHT SIDE FORM */}
         <motion.div
