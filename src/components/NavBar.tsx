@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "./ThemeToggle";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/komallogo.png";
 
 interface NavBarProps {
   darkMode: boolean;
